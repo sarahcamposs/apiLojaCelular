@@ -1,6 +1,5 @@
 package br.com.apicelular.apicel.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -12,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente implements Serializable{
+public class Cliente {
 //	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -35,7 +34,8 @@ public class Cliente implements Serializable{
 	public Cliente() {
 	}
 
-	public Cliente(String nomeCliente, String telefoneCliente, String enderecoCliente) {
+	public Cliente(String nomeCliente, String telefoneCliente, String enderecoCliente, Long idCliente) {
+		this.idCliente = idCliente;
 		this.nomeCliente = nomeCliente;
 		this.telefoneCliente = telefoneCliente;
 		this.enderecoCliente = enderecoCliente;
